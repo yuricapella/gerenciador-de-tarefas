@@ -14,7 +14,7 @@ public class ConsoleView implements IView {
     }
 
     @Override
-    public int getIntInput(String prompt) {
+    public Integer getIntInput(String prompt) {
         System.out.print(prompt + ": ");
         return InputReader.readInt();
     }
