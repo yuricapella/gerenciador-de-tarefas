@@ -1,10 +1,7 @@
 package br.com.ada.t1322.tecnicasprogramacao.projeto;
 
 import br.com.ada.t1322.tecnicasprogramacao.projeto.controller.TaskController;
-import br.com.ada.t1322.tecnicasprogramacao.projeto.controller.TaskControllerImpl;
 import br.com.ada.t1322.tecnicasprogramacao.projeto.model.Task;
-import br.com.ada.t1322.tecnicasprogramacao.projeto.repository.TaskRepositoryImpl;
-import br.com.ada.t1322.tecnicasprogramacao.projeto.service.TaskServiceImpl;
 import br.com.ada.t1322.tecnicasprogramacao.projeto.view.ConsoleApp;
 import br.com.ada.t1322.tecnicasprogramacao.projeto.view.ConsoleView;
 import br.com.ada.t1322.tecnicasprogramacao.projeto.view.View;
