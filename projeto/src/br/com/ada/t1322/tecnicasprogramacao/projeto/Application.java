@@ -7,14 +7,14 @@ import br.com.ada.t1322.tecnicasprogramacao.projeto.repository.TaskRepositoryImp
 import br.com.ada.t1322.tecnicasprogramacao.projeto.service.TaskServiceImpl;
 import br.com.ada.t1322.tecnicasprogramacao.projeto.view.ConsoleApp;
 import br.com.ada.t1322.tecnicasprogramacao.projeto.view.ConsoleView;
-import br.com.ada.t1322.tecnicasprogramacao.projeto.view.IView;
+import br.com.ada.t1322.tecnicasprogramacao.projeto.view.View;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class Application {
     public static void main(String[] args) {
-        try (IView view = new ConsoleView()) {
+        try (View view = new ConsoleView()) {
             TaskController controller = new TaskControllerImpl(new TaskServiceImpl(TaskRepositoryImpl.getInstance()));
 
             initializeSampleTasks(controller);

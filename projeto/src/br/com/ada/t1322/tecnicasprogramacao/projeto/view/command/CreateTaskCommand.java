@@ -2,16 +2,16 @@ package br.com.ada.t1322.tecnicasprogramacao.projeto.view.command;
 
 import br.com.ada.t1322.tecnicasprogramacao.projeto.controller.TaskController;
 import br.com.ada.t1322.tecnicasprogramacao.projeto.model.Task;
-import br.com.ada.t1322.tecnicasprogramacao.projeto.view.IView;
+import br.com.ada.t1322.tecnicasprogramacao.projeto.view.View;
 
 import java.util.Optional;
 
 public class CreateTaskCommand implements Command {
 
-    private final IView view;
+    private final View view;
     private final TaskController taskController;
 
-    public CreateTaskCommand(IView view, TaskController taskController) {
+    public CreateTaskCommand(View view, TaskController taskController) {
         this.view = view;
         this.taskController = taskController;
     }

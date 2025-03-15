@@ -2,14 +2,14 @@ package br.com.ada.t1322.tecnicasprogramacao.projeto.view.command;
 
 import br.com.ada.t1322.tecnicasprogramacao.projeto.controller.TaskController;
 import br.com.ada.t1322.tecnicasprogramacao.projeto.model.Task;
-import br.com.ada.t1322.tecnicasprogramacao.projeto.view.IView;
+import br.com.ada.t1322.tecnicasprogramacao.projeto.view.View;
 
 public class UpdateTaskStatusCommand implements Command {
 
-    private final IView view;
+    private final View view;
     private final TaskController taskController;
 
-    public UpdateTaskStatusCommand(IView view, TaskController taskController) {
+    public UpdateTaskStatusCommand(View view, TaskController taskController) {
         this.view = view;
         this.taskController = taskController;
     }

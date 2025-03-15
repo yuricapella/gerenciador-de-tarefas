@@ -8,10 +8,10 @@ import java.util.Map;
 
 public class ConsoleApp {
 
-    private final IView view;
+    private final View view;
     private final Map<Integer, Command> commands = new HashMap<>();
 
-    public ConsoleApp(IView view, TaskController taskController) {
+    public ConsoleApp(View view, TaskController taskController) {
         this.view = view;
 
         commands.put(1, new CreateTaskCommand(view, taskController));

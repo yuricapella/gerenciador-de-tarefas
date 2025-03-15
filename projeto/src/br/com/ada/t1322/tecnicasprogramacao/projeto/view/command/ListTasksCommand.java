@@ -2,7 +2,7 @@ package br.com.ada.t1322.tecnicasprogramacao.projeto.view.command;
 
 import br.com.ada.t1322.tecnicasprogramacao.projeto.controller.TaskController;
 import br.com.ada.t1322.tecnicasprogramacao.projeto.model.Task;
-import br.com.ada.t1322.tecnicasprogramacao.projeto.view.IView;
+import br.com.ada.t1322.tecnicasprogramacao.projeto.view.View;
 import br.com.ada.t1322.tecnicasprogramacao.projeto.service.TaskComparators;
 
 import java.util.Comparator;
@@ -11,10 +11,10 @@ import java.util.Optional;
 
 public class ListTasksCommand implements Command {
 
-    private final IView view;
+    private final View view;
     private final TaskController taskController;
 
-    public ListTasksCommand(IView view, TaskController taskController) {
+    public ListTasksCommand(View view, TaskController taskController) {
         this.view = view;
         this.taskController = taskController;
     }

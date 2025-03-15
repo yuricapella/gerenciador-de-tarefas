@@ -4,10 +4,7 @@ import br.com.ada.t1322.tecnicasprogramacao.projeto.dto.TaskUpdateRequest;
 import br.com.ada.t1322.tecnicasprogramacao.projeto.model.Task;
 import br.com.ada.t1322.tecnicasprogramacao.projeto.repository.TaskRepository;
 
-import java.util.Comparator;
-import java.util.List;
 import java.util.Optional;
-import java.util.function.Predicate;
 
 public abstract class AbstractTaskService implements TaskService {
 
