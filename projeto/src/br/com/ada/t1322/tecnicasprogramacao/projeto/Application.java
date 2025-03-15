@@ -1,7 +1,9 @@
 package br.com.ada.t1322.tecnicasprogramacao.projeto;
 
 import br.com.ada.t1322.tecnicasprogramacao.projeto.controller.TaskController;
+import br.com.ada.t1322.tecnicasprogramacao.projeto.controller.TaskControllerImpl;
 import br.com.ada.t1322.tecnicasprogramacao.projeto.model.Task;
+import br.com.ada.t1322.tecnicasprogramacao.projeto.service.TaskServiceFactory;
 import br.com.ada.t1322.tecnicasprogramacao.projeto.view.ConsoleApp;
 import br.com.ada.t1322.tecnicasprogramacao.projeto.view.ConsoleView;
 import br.com.ada.t1322.tecnicasprogramacao.projeto.view.View;
@@ -12,7 +14,7 @@ import java.time.format.DateTimeFormatter;
 public class Application {
     public static void main(String[] args) {
         try (View view = new ConsoleView()) {
-            TaskController controller = new TaskControllerImpl(new TaskServiceImpl(TaskRepositoryImpl.getInstance()));
+            TaskController controller = new TaskControllerImpl(TaskServiceFactory.createTaskService());
 
             initializeSampleTasks(controller);
 
