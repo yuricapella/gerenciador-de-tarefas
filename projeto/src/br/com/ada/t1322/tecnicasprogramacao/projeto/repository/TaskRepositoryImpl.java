@@ -6,13 +6,23 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Predicate;
+import java.util.stream.IntStream;
 
 public class TaskRepositoryImpl implements TaskRepository {
     List<Task> tasks = new ArrayList<>();
     private static long count = 1;
 
     public Task save(Task task){
-        task.setId(count++);
+        if(task.getId() == null){
+            task.setId(count++);
+        }else{
+            int indice = IntStream.range(0, tasks.size())
+                    .filter(tarefa -> tasks.get(tarefa).equals(task))
+                    .findFirst()
+                    .orElse(-1);
+            task.setId(tasks.get(indice).getId());
+        }
+
         tasks.add(task);
         return task;
     }
