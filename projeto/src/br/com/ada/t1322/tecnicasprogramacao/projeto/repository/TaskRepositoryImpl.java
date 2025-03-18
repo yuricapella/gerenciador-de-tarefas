@@ -9,7 +9,7 @@ import java.util.function.Predicate;
 import java.util.stream.IntStream;
 
 public class TaskRepositoryImpl implements TaskRepository {
-    List<Task> tasks = new ArrayList<>();
+    private List<Task> tasks = new ArrayList<>();
     private static long count = 1;
 
     public Task save(Task task){
@@ -20,7 +20,7 @@ public class TaskRepositoryImpl implements TaskRepository {
                     .filter(tarefa -> tasks.get(tarefa).equals(task))
                     .findFirst()
                     .orElse(-1);
-            task.setId(tasks.get(indice).getId());
+            tasks.set(indice, task);
         }
 
         tasks.add(task);
