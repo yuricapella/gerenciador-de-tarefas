@@ -4,7 +4,6 @@ import br.com.ada.t1322.tecnicasprogramacao.projeto.dto.TaskUpdateRequest;
 import br.com.ada.t1322.tecnicasprogramacao.projeto.model.Task;
 import br.com.ada.t1322.tecnicasprogramacao.projeto.repository.TaskRepository;
 import br.com.ada.t1322.tecnicasprogramacao.projeto.service.notification.Notifier;
-import br.com.ada.t1322.tecnicasprogramacao.projeto.service.notification.TaskNotifier;
 import br.com.ada.t1322.tecnicasprogramacao.projeto.service.validation.TaskValidator;
 
 import java.util.Optional;

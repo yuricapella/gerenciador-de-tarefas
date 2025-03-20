@@ -28,4 +28,4 @@ bin/
 ### Mac OS ###
 .DS_Store
 
-*Impl.java
+.idea/misc.xml
