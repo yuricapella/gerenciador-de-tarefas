@@ -21,7 +21,7 @@ public class CreateTaskCommand implements Command {
         String title = view.getInput("📌 Informe o título da tarefa");
         String description = view.getInput("📝 Informe a descrição (opcional)");
         String deadline = view.getInput("📅 Informe a data limite (DD/MM/YYYY)");
-        String statusStr = view.getInput("🔄 Informe o status (Pendente, Em andamento, Concluído) (ou deixe em branco para 'Pendente')");
+        String statusStr = view.getInput("🔄 Informe o status (Pendente, Em andamento, Bloqueado, Concluído) (ou deixe em branco para 'Pendente')");
 
         try {
             Task.Status status = Optional.ofNullable(statusStr)

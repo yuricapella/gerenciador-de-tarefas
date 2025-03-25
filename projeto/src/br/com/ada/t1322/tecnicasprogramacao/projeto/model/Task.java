@@ -22,6 +22,7 @@ public class Task {
     public enum Status {
         PENDENTE("Pendente"),
         EM_ANDAMENTO("Em andamento"),
+        BLOQUEADO("Bloqueado"),
         CONCLUIDO("Concluído");
 
         private final String descricao;

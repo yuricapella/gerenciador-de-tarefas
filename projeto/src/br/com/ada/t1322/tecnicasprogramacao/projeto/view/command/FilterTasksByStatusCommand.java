@@ -21,7 +21,7 @@ public class FilterTasksByStatusCommand implements Command {
 
     @Override
     public void execute() {
-        String statusInput = view.getInput("🔎 Digite o status para filtrar (Pendente, Em andamento, Concluído)");
+        String statusInput = view.getInput("🔎 Digite o status para filtrar (Pendente, Em andamento, Bloqueado, Concluído)");
         Task.Status status;
         try {
             status = Task.Status.fromString(statusInput);
@@ -45,11 +45,12 @@ public class FilterTasksByStatusCommand implements Command {
         view.showMessage("1 - Por Data Limite");
         view.showMessage("2 - Por Título");
         view.showMessage("3 - Por Status");
-        view.showMessage("4 - Sem ordenação");
+        view.showMessage("4 - Por Id");
+        view.showMessage("5 - Sem ordenação");
 
         int option = view.getIntInput("Digite o número da opção");
 
-        if (option == 4) {
+        if (option == 5) {
             return Optional.empty();
         }
 
@@ -59,6 +60,7 @@ public class FilterTasksByStatusCommand implements Command {
         String criteria = switch (option) {
             case 2 -> "title";
             case 3 -> "status";
+            case 4 -> "id";
             default -> "deadline";
         };
 
