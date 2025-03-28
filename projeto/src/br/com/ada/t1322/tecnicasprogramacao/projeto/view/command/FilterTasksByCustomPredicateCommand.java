@@ -22,16 +22,18 @@ public class FilterTasksByCustomPredicateCommand implements Command {
 
     @Override
     public void execute() {
-        String keyword = view.getInput("🔎 Digite uma palavra-chave para buscar no título ou descrição");
-        Optional<Comparator<Task>> orderBy = SortingSelectionTaskHandler.getSortingMethod(view);
+        do {
+            String keyword = view.getInput("🔎 Digite uma palavra-chave para buscar no título ou descrição");
+            Optional<Comparator<Task>> orderBy = SortingSelectionTaskHandler.getSortingMethod(view);
 
-        Predicate<Task> predicate = task -> task.getTitle().contains(keyword) || task.getDescription().contains(keyword);
-        List<Task> tasks = taskController.getTasksBy(predicate, orderBy);
+            Predicate<Task> predicate = task -> task.getTitle().contains(keyword) || task.getDescription().contains(keyword);
+            List<Task> tasks = taskController.getTasksBy(predicate, orderBy);
 
-        if (tasks.isEmpty()) {
-            view.showMessage("📭 Nenhuma tarefa encontrada.");
-        } else {
-            tasks.forEach(task -> view.showMessage(task.toString()));
-        }
+            if (tasks.isEmpty()) {
+                view.showMessage("📭 Nenhuma tarefa encontrada.");
+            } else {
+                tasks.forEach(task -> view.showMessage(task.toString()));
+            }
+        } while (view.getInput("Deseja listar novamente? (S/N)").trim().equalsIgnoreCase("S"));
     }
 }

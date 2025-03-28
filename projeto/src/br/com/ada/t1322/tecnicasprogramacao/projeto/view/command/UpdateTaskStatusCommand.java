@@ -17,15 +17,17 @@ public class UpdateTaskStatusCommand implements Command {
 
     @Override
     public void execute() {
-        Long id = view.getIntInput("📌 Informe o ID da tarefa para atualizar o status").longValue();
-        String status = view.getInput("🔄 Novo status "+ StatusDisplayHelper.getStatusOptions());
+        do{
+            Long id = view.getIntInput("📌 Informe o ID da tarefa para atualizar o status").longValue();
+            String status = view.getInput("🔄 Novo status "+ StatusDisplayHelper.getStatusOptions());
 
-        try {
-            Task updatedTask = taskController.updateTaskStatus(id, Task.Status.fromString(status));
-            view.showMessage("✅ Status atualizado com sucesso!");
-            view.showMessage(updatedTask.toString());
-        } catch (IllegalArgumentException e) {
-            view.showMessage("❌ Erro: " + e.getMessage());
-        }
+            try {
+                Task updatedTask = taskController.updateTaskStatus(id, Task.Status.fromString(status));
+                view.showMessage("✅ Status atualizado com sucesso!");
+                view.showMessage(updatedTask.toString());
+            } catch (IllegalArgumentException e) {
+                view.showMessage("❌ Erro: " + e.getMessage());
+            }
+        } while (view.getInput("Deseja atualizar outro status? (S/N)").trim().equalsIgnoreCase("S"));
     }
 }

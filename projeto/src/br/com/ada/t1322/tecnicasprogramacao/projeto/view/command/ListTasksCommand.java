@@ -21,14 +21,16 @@ public class ListTasksCommand implements Command {
 
     @Override
     public void execute() {
-        Optional<Comparator<Task>> orderBy = SortingSelectionTaskHandler.getSortingMethod(view);
-        List<Task> tasks = taskController.getAllTasks(orderBy);
+        do {
+            Optional<Comparator<Task>> orderBy = SortingSelectionTaskHandler.getSortingMethod(view);
+            List<Task> tasks = taskController.getAllTasks(orderBy);
 
-        if (tasks.isEmpty()) {
-            view.showMessage("📭 Nenhuma tarefa encontrada.");
-        } else {
-            tasks.forEach(task -> view.showMessage(task.toString()));
-        }
+            if (tasks.isEmpty()) {
+                view.showMessage("📭 Nenhuma tarefa encontrada.");
+            } else {
+                tasks.forEach(task -> view.showMessage(task.toString()));
+            }
+        } while (view.getInput("Deseja listar novamente? (S/N)").trim().equalsIgnoreCase("S"));
     }
 
 }

@@ -22,23 +22,25 @@ public class FilterTasksByStatusCommand implements Command {
 
     @Override
     public void execute() {
-        String statusInput = view.getInput("🔎 Digite o status para filtrar "+ StatusDisplayHelper.getStatusOptions());
-        Task.Status status;
-        try {
-            status = Task.Status.fromString(statusInput);
-        } catch (IllegalArgumentException e) {
-            view.showMessage("❌ Status inválido. Tente novamente.");
-            return;
-        }
+        do{
+            String statusInput = view.getInput("🔎 Digite o status para filtrar "+ StatusDisplayHelper.getStatusOptions());
+            Task.Status status;
+            try {
+                status = Task.Status.fromString(statusInput);
+            } catch (IllegalArgumentException e) {
+                view.showMessage("❌ Status inválido. Tente novamente.");
+                return;
+            }
 
-        Optional<Comparator<Task>> orderBy = SortingSelectionTaskHandler.getSortingMethod(view);;
-        List<Task> tasks = taskController.getTasksByStatus(status, orderBy);
+            Optional<Comparator<Task>> orderBy = SortingSelectionTaskHandler.getSortingMethod(view);;
+            List<Task> tasks = taskController.getTasksByStatus(status, orderBy);
 
-        if (tasks.isEmpty()) {
-            view.showMessage("📭 Nenhuma tarefa encontrada com esse status.");
-        } else {
-            tasks.forEach(task -> view.showMessage(task.toString()));
-        }
+            if (tasks.isEmpty()) {
+                view.showMessage("📭 Nenhuma tarefa encontrada com esse status.");
+            } else {
+                tasks.forEach(task -> view.showMessage(task.toString()));
+            }
+        } while (view.getInput("Deseja listar novamente? (S/N)").trim().equalsIgnoreCase("S"));
     }
 
 }
