@@ -24,7 +24,7 @@ public class Task {
         PENDENTE("Pendente"),
         EM_ANDAMENTO("Em andamento"),
         BLOQUEADO("Bloqueado"),
-        CONCLUIDO("Concluído");
+        CONCLUIDO("Concluido");
 
         private final String descricao;
 
