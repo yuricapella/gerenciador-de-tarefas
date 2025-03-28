@@ -3,7 +3,7 @@ package br.com.ada.t1322.tecnicasprogramacao.projeto.view.command;
 import br.com.ada.t1322.tecnicasprogramacao.projeto.controller.TaskController;
 import br.com.ada.t1322.tecnicasprogramacao.projeto.model.Task;
 import br.com.ada.t1322.tecnicasprogramacao.projeto.view.View;
-import br.com.ada.t1322.tecnicasprogramacao.projeto.view.command.helper.SortingCommandHelper;
+import br.com.ada.t1322.tecnicasprogramacao.projeto.view.command.helper.SortingSelectionTaskHandler;
 
 import java.util.Comparator;
 import java.util.List;
@@ -23,7 +23,7 @@ public class FilterTasksByCustomPredicateCommand implements Command {
     @Override
     public void execute() {
         String keyword = view.getInput("🔎 Digite uma palavra-chave para buscar no título ou descrição");
-        Optional<Comparator<Task>> orderBy = SortingCommandHelper.getSortingMethod(view);
+        Optional<Comparator<Task>> orderBy = SortingSelectionTaskHandler.getSortingMethod(view);
 
         Predicate<Task> predicate = task -> task.getTitle().contains(keyword) || task.getDescription().contains(keyword);
         List<Task> tasks = taskController.getTasksBy(predicate, orderBy);
