@@ -57,10 +57,6 @@ public class TaskControllerImpl extends AbstractTaskController {
         if (status == null) {
             throw new IllegalArgumentException("Status não pode ser nulo.");
         }
-
-        if (status == Task.Status.CONCLUIDO) {
-            throw new IllegalArgumentException("Uma nova tarefa não pode ser criada com o status 'CONCLUÍDO'.");
-        }
     }
 
 }
