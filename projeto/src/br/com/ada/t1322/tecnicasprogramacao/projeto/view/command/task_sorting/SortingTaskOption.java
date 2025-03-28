@@ -1,4 +1,4 @@
-package br.com.ada.t1322.tecnicasprogramacao.projeto.view.command.helper;
+package br.com.ada.t1322.tecnicasprogramacao.projeto.view.command.task_sorting;
 
 public enum SortingTaskOption {
     DEADLINE(1, "Data Limite", "deadline"),
