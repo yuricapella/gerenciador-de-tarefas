@@ -3,7 +3,8 @@ package br.com.ada.t1322.tecnicasprogramacao.projeto.view.command;
 import br.com.ada.t1322.tecnicasprogramacao.projeto.controller.TaskController;
 import br.com.ada.t1322.tecnicasprogramacao.projeto.model.Task;
 import br.com.ada.t1322.tecnicasprogramacao.projeto.view.View;
-import br.com.ada.t1322.tecnicasprogramacao.projeto.view.command.helper.SortingSelectionTaskHandler;
+import br.com.ada.t1322.tecnicasprogramacao.projeto.view.command.helper.StatusDisplayHelper;
+import br.com.ada.t1322.tecnicasprogramacao.projeto.view.command.task_sorting.SortingSelectionTaskHandler;
 
 import java.util.Comparator;
 import java.util.List;
@@ -21,7 +22,7 @@ public class FilterTasksByStatusCommand implements Command {
 
     @Override
     public void execute() {
-        String statusInput = view.getInput("🔎 Digite o status para filtrar (Pendente, Em andamento, Bloqueado, Concluído)");
+        String statusInput = view.getInput("🔎 Digite o status para filtrar "+ StatusDisplayHelper.getStatusOptions());
         Task.Status status;
         try {
             status = Task.Status.fromString(statusInput);
