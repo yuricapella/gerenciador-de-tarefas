@@ -1,3 +1,4 @@
+```markdown
 ├── ENUNCIADO.md
 └── projeto
     ├── .gitignore
@@ -54,3 +55,5 @@
                                         └── task_sorting
                                             ├── SortingSelectionTaskHandler.java
                                             └── SortingTaskOption.java
+
+```
