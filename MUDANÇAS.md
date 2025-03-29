@@ -1,3 +1,4 @@
+[Voltar ao README](README.md)
 # Mudanças e Melhorias Realizadas
 
 A seguir, detalho as mudanças implementadas no projeto para adequá-lo aos requisitos e melhorar sua robustez, legibilidade e manutenção. Essas alterações foram realizadas ao longo do desenvolvimento, integrando melhorias propostas nas atividades do curso.
