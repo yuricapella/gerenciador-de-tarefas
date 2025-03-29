@@ -1,3 +1,4 @@
+<a id="top"></a>
 # Gerenciador de Tarefas Inteligente 📋✨
 
 Este projeto é a base de um **Gerenciador de Tarefas Inteligente** desenvolvido para auxiliar profissionais a organizar suas atividades diárias. Foi criado e aprimorado durante o curso de Técnicas de Programação do programa Desenvolva+ da Ada e Mercado Livre, onde nossa base sólida foi expandida com melhorias e adaptações utilizando conceitos de SOLID e programação funcional.
@@ -68,6 +69,6 @@ As seguintes funcionalidades serão adicionadas em versões futuras do projeto:
 
 ---
 
-[Voltar ao topo](https://github.com/yuricapella/gerenciador-de-tarefas/edit/entrega-final/README.md)
+[Voltar ao topo](#top)
 
 
