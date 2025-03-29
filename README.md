@@ -68,4 +68,6 @@ As seguintes funcionalidades serão adicionadas em versões futuras do projeto:
 
 ---
 
-[Voltar ao topo](README.md)
+[Voltar ao topo](https://github.com/yuricapella/gerenciador-de-tarefas/edit/entrega-final/README.md)
+
+
